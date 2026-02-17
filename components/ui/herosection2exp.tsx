@@ -31,6 +31,7 @@ export function HeroSection2Exp() {
                 <GridBackground />
             </div>
 
+
             {/* Spotlight Effect */}
             <Spotlight />
 

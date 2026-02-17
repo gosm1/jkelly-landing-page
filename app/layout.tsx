@@ -69,9 +69,34 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
       </head>
       <body className={`${inter.className} antialiased text-gray-300 bg-bg overflow-x-hidden`}>
-        {/* Background Ambient Glows */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[500px] bg-[#027DD5]/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
         <Header />
+
+{/* MOBILE: gradient only (fast) */}
+<div
+  className="
+    absolute top-0 left-1/2 -translate-x-1/2
+    w-full max-w-[800px] h-[500px]
+    bg-[radial-gradient(circle,rgba(2,125,213,0.35),transparent_70%)]
+    -z-10 pointer-events-none
+    block md:hidden
+  "
+/>
+
+{/* DESKTOP & TABLET: blurred glow */}
+<div
+  className="
+    absolute top-0 left-1/2 -translate-x-1/2
+    w-full max-w-[800px] h-[500px]
+    bg-[#027DD5]/20 rounded-full blur-[120px]
+    -z-10 pointer-events-none
+    hidden md:block
+  "
+/>
+
+
+
+
+
         {children}
       </body>
     </html>
